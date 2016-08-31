@@ -15,7 +15,7 @@ var inner = outer();
 
 //Once you do that, invoke inner.
 
-  inner();
+inner();
 
 
 
@@ -38,7 +38,6 @@ function makeCall() {
   var callJake = callFriend();
   console.log(callJake(435-215-9248));
 }
-
 
 
 
@@ -102,16 +101,12 @@ counter = counterFactory(10);
 
     var welcomeText = 'You\'re doing awesome, keep it up ';
 
-    function message() {
-      return function (){
-        return welcomeText + firstname + ' ' + lastname)
-      }
-    }
+    // code message function here.
 
 
     //Uncommment this to return the value of your invoked message function
 
-    return message()
+    //return message()
   }
 
   motivation('Billy', 'Bob'); // 'Your doing awesome keep it up Billy Bob
@@ -137,16 +132,13 @@ counter = counterFactory(10);
     // Anything that is being returned is made public and can be invoked from outside our lexical scope
 
     return {
-      publicMethod : function(){
-        return privateMethod();
-      }
       // Code here.
     };
 
   })();
 
 //Uncomment this after you create your public method
-module.publicMethod();
+//   module.publicMethod();
 
 
 
@@ -157,13 +149,13 @@ module.publicMethod();
 
 function timeOutCounter() {
   for (var i = 0; i <= 5; i++) {
-    newScope(i, i);
-  }
-
-  function newScope(i) {
     setTimeout(function() {
       console.log(i);
     }, i * 1000)
+  }
+
+  function newScope(i) {
+    console.log(i)
   }
 }
 timeOutCounter();
@@ -175,26 +167,10 @@ timeOutCounter();
 
 //////////////////PROBLEM 8////////////////////
 
-var funcArray = [0,1,2,3,4,5];
+var funcArray = [];
 
-function makeCoosure(num) {
-  return function() {
-    return num;
-  }
-}
-
-function make FuncArray(nums) {
-  var function = [];
-
-  for(var i = 0; i < nums.lenght; i++) {
-    var func = makeClosure(nums[i]);
-
-    funcitons.push(func);
-  }
-  return functions;
-}
-
-var funcArray = makeFuncArray(nums);
+/*
+  Make the following code work
 
   funcArray[0]() //0
   funcArray[1]() //1
@@ -202,3 +178,6 @@ var funcArray = makeFuncArray(nums);
   funcArray[3]() //3
   funcArray[4]() //4
   funcArray[5]() //5
+
+  *Hint: Don't let this fool you. Break down what's really happening here.
+*/
